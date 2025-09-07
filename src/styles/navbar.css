@@ -1,0 +1,89 @@
+/* NAVBAR principal */
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;   /* 🔹 Transparente, deja ver el fondo */
+  padding: 1rem 2rem;
+  z-index: 100;
+
+  font-family: Arial, sans-serif;  /* 🔹 fuerza su propia fuente */
+  color: initial;                  /* 🔹 evita herencia de color blanco */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LINKS */
+.navbar-links {
+  display: flex;
+  gap: 2.5rem;   /* 🔹 más separación entre links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.left-links {
+  flex: 1;
+  justify-content: flex-end;   /* 🔹 en lugar de flex-start */
+  margin-right: 20rem;   
+      margin-top: -4%;      /* 🔹 acerca más hacia el logo */
+}
+
+.right-links {
+  flex: 1;
+  justify-content: flex-start; /* 🔹 en lugar de flex-end */
+  margin-left: 20rem;  
+      margin-top: -4%;        /* 🔹 acerca más hacia el logo */
+}
+
+/* BOTÓN estilo cápsula */
+.nav-btn {
+  padding: 1.1rem 3.8rem;
+  border: 2px solid #000;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;   /* 🔹 asegura fuente limpia */
+  color: #000;
+  background: #fff;   /* 🔹 Fondo blanco estilo Aura Bora */
+  transition: all 0.2s ease;
+  box-shadow: 3px 3px #000;
+}
+
+/* Hover más suave y coherente con la estética */
+.nav-btn:hover {
+  background: #d8c5f8;   /* Lila claro */
+  color: #4b0082;        /* Violeta oscuro para contraste */
+  transform: scale(1.08);
+  box-shadow: 0 0 12px #c299ff, 0 0 24px #9a5df5; /* Glow sutil */
+}
+
+/* Íconos carrito y gamepad */
+.icon-link {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #000;
+  transition: transform 0.2s;
+}
+.icon-link:hover {
+  transform: scale(1.2);
+}
+
+/* LOGO CENTRAL */
+.navbar-logo img {
+  height: 150px;
+  display: block;
+}
+
+.nav-btn, 
+.icon-link, 
+.navbar-logo a {
+  cursor: none !important;  /* 🔹 evita que salga la manito */
+}

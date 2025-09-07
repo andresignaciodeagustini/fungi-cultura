@@ -1,0 +1,90 @@
+.section-info {
+  width: 100%;
+  min-height: 170vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem;
+  color: #222;
+  text-align: center;
+  font-family: 'NothingMagic', Arial, sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* Intro pequeño */
+
+
+/* Titulares destacados */
+.highlight {
+  font-size: 10.5rem;
+  font-weight: bold;
+  margin: 0.7rem 0;
+  letter-spacing: 2px;
+  display: inline-block;
+  line-height: 1.2;
+
+  /* 🔹 Mantiene relleno de color pero agrega borde */
+  -webkit-text-stroke: 2px #000; /* Borde negro */
+  color: inherit;                /* El relleno sigue usando el color de clase (.purple, .pink, etc.) */
+  paint-order: stroke fill;      /* Asegura que el contorno se pinte detrás */
+}
+
+.purple { color: #9a5df5; } 
+.orange { color: #e98b3a; }
+.green  { color: #78c351; }
+.pink   { color: #f76fa0; }
+.yellow { color: #f4c542; }
+
+/* Lema (última frase grande) */
+.tagline {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 2.2rem 0;
+}
+
+/* Texto inferior */
+
+
+/* Animaciones */
+@keyframes floatingAnim {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeInUp {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 6px #f4c542, 0 0 12px #e98b3a; }
+  50% { text-shadow: 0 0 10px #f4c542, 0 0 22px #e98b3a; }
+  100% { text-shadow: 0 0 6px #f4c542, 0 0 12px #e98b3a; }
+}
+
+/* Aplicaciones */
+.floating { animation: floatingAnim 6s ease-in-out infinite; }
+.bouncing { animation: bounce 2.5s infinite ease-in-out; }
+.glow { animation: glowPulse 3s infinite ease-in-out; }
+
+/* Diferentes delays */
+.fade-in { animation: fadeInUp 1.8s ease forwards; }
+.fade-in-delay { animation: fadeInUp 2.2s ease forwards; }
+.fade-in-slow { animation: fadeInUp 2.8s ease forwards; }
+
+.navlink-text {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  margin: 1rem 0;
+  text-align: center;
+}
