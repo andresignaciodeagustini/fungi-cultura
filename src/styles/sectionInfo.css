@@ -19,7 +19,7 @@
 
 /* Titulares destacados */
 .highlight {
-  font-size: 10.5rem;
+  font-size: 6.5rem;
   font-weight: bold;
   margin: 0.7rem 0;
   letter-spacing: 2px;
@@ -88,3 +88,4 @@
   margin: 1rem 0;
   text-align: center;
 }
+

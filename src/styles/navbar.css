@@ -1,16 +1,13 @@
 /* NAVBAR principal */
-
-
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: transparent;   /* 🔹 Transparente, deja ver el fondo */
-  padding: 1rem 2rem;
+  background: transparent;
+  padding: 0.8rem 1.5rem;
   z-index: 100;
-
-  font-family: Arial, sans-serif;  /* 🔹 fuerza su propia fuente */
-  color: initial;                  /* 🔹 evita herencia de color blanco */
+  font-family: Arial, sans-serif;
+  color: initial;
 }
 
 .navbar-container {
@@ -22,7 +19,7 @@
 /* LINKS */
 .navbar-links {
   display: flex;
-  gap: 2.5rem;   /* 🔹 más separación entre links */
+  gap: 1.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -30,60 +27,106 @@
 
 .left-links {
   flex: 1;
-  justify-content: flex-end;   /* 🔹 en lugar de flex-start */
-  margin-right: 20rem;   
-      margin-top: -4%;      /* 🔹 acerca más hacia el logo */
+  justify-content: flex-end;
+  margin-right: 15rem;  /* Aumentado para más espacio */
+  margin-top: 0;
 }
 
 .right-links {
   flex: 1;
-  justify-content: flex-start; /* 🔹 en lugar de flex-end */
-  margin-left: 20rem;  
-      margin-top: -4%;        /* 🔹 acerca más hacia el logo */
+  justify-content: flex-start;
+  margin-left: 15rem;  /* Aumentado para más espacio */
+  margin-top: 0;
 }
 
 /* BOTÓN estilo cápsula */
 .nav-btn {
-  padding: 1.1rem 3.8rem;
+  padding: 0.7rem 2.2rem;
   border: 2px solid #000;
   border-radius: 999px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1rem;
-  font-family: Arial, sans-serif;   /* 🔹 asegura fuente limpia */
+  font-size: 0.9rem;
+  font-family: Arial, sans-serif;
   color: #000;
-  background: #fff;   /* 🔹 Fondo blanco estilo Aura Bora */
+  background: #fff;
   transition: all 0.2s ease;
   box-shadow: 3px 3px #000;
 }
 
 /* Hover más suave y coherente con la estética */
 .nav-btn:hover {
-  background: #d8c5f8;   /* Lila claro */
-  color: #4b0082;        /* Violeta oscuro para contraste */
+  background: #d8c5f8;
+  color: #4b0082;
   transform: scale(1.08);
-  box-shadow: 0 0 12px #c299ff, 0 0 24px #9a5df5; /* Glow sutil */
+  box-shadow: 0 0 12px #c299ff, 0 0 24px #9a5df5;
 }
 
 /* Íconos carrito y gamepad */
 .icon-link {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-decoration: none;
   color: #000;
   transition: transform 0.2s;
 }
+
 .icon-link:hover {
   transform: scale(1.2);
 }
 
 /* LOGO CENTRAL */
 .navbar-logo img {
-  height: 150px;
+  height: 90px;
   display: block;
 }
 
 .nav-btn, 
 .icon-link, 
 .navbar-logo a {
-  cursor: none !important;  /* 🔹 evita que salga la manito */
+  cursor: none !important;
+}
+
+/* Media queries para mejor responsividad */
+@media (max-width: 1200px) {
+  .left-links {
+    margin-right: 8rem;  /* Reducido para pantallas medianas */
+  }
+  
+  .right-links {
+    margin-left: 8rem;  /* Reducido para pantallas medianas */
+  }
+  
+  .navbar-logo img {
+    height: 70px;
+  }
+  
+  .nav-btn {
+    padding: 0.6rem 1.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    gap: 1rem;
+  }
+  
+  .left-links,
+  .right-links {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+  
+  .navbar-logo img {
+    height: 50px;
+  }
+  
+  .nav-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
+  }
+  
+  .icon-link {
+    font-size: 1.1rem;
+  }
 }
