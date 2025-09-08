@@ -6,7 +6,8 @@ import Shop from "./pages/Shop";
 import Cart from "./pages/Cart";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import SectionInfo from "./components/SectionInfo";   // ✅ Import nuevo
+import SectionInfo from "./components/SectionInfo";   
+import ProductSlider from "./components/ProductSlider";  // ✅ Nuevo import
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
           element={
             <>
               <Home />
-              <SectionInfo /> {/* ✅ Ahora aparece debajo del Home */}
+              
+              <SectionInfo />   {/* ✅ Y arriba del bloque informativo */}
+              <ProductSlider /> {/* ✅ Ahora aparece debajo del Home */}
             </>
           }
         />

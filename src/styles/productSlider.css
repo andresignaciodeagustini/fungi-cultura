@@ -1,0 +1,168 @@
+/* ==============================
+   🌌 Sección principal
+   ============================== */
+.slider-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  border-top: 4px solid black;
+  position: relative;
+  z-index: 1;
+  background-color: var(--cr-offwhite-1, #FFF9ED);
+  color: black;
+  overflow: hidden;
+}
+
+/* ==============================
+   🎨 Títulos con degradado animado
+   ============================== */
+.slider-title {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'NothingMagic', Arial, sans-serif;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--cr-pink, #FFB79F),
+    var(--cr-purple, #E2D3FF),
+    var(--cr-orange, #FFD063),
+    var(--cr-yellow, #FFF384)
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ==================================
+   🛒 Slider y Cards
+   ================================== */
+.slider-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  scroll-behavior: smooth;
+}
+.slider-container::-webkit-scrollbar { display: none; }
+
+.product-card {
+  flex: 0 0 280px;          
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid black; 
+  border-radius: 8px;
+  background-color: var(--cr-offwhite-1, #FFF9ED);
+  scroll-snap-align: center;
+  text-align: center;
+  overflow: hidden;
+  font-family: monospace, Arial, sans-serif;
+}
+
+/* Header */
+.card-header {
+  background-color: var(--cr-green, #78c351);
+  padding: 0.8rem;
+  border-bottom: 1px solid black;
+}
+.product-name {
+  font-size: 1rem;
+  margin: 0;
+  text-transform: uppercase;
+  color: black;
+}
+
+/* Subheader */
+.card-subheader {
+  background-color: var(--cr-green-light, #E6EBAF);
+  padding: 0.6rem;
+  border-bottom: 1px solid black;
+}
+.product-desc {
+  font-size: 0.9rem;
+  margin: 0;
+  color: black;
+  font-style: italic;
+}
+
+/* Imagen */
+.card-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.product-img {
+  max-height: 260px;
+  width: auto;
+  object-fit: contain;
+   border-radius: 8px; 
+}
+
+/* Footer */
+.card-footer {
+  background-color: var(--cr-green-light, #E6EBAF);
+  border-top: 1px solid black;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.stock-info {
+  font-size: 0.85rem;
+  color: #333;
+}
+.product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+}
+
+/* ==================================
+   ⬅️➡️ Flechas con imágenes PNG
+   ================================== */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.arrow img {
+  width: 40px;
+  height: auto;
+  filter: drop-shadow(1px 1px 0 black); /* pequeño borde retro */
+}
+
+.arrow.left {
+  left: 1rem;
+}
+
+.arrow.right {
+  right: 1rem;
+}
+
+.arrow:hover img {
+  transform: scale(1.1);
+}
