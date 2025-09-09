@@ -7,7 +7,7 @@
   border-top: 4px solid black;
   position: relative;
   z-index: 1;
-  background-color: var(--cr-offwhite-1, #FFF9ED);
+  background-color: #FFF9ED; /* Offwhite-1 */
   color: black;
   overflow: hidden;
 }
@@ -23,10 +23,10 @@
 .gradient-text {
   background: linear-gradient(
     90deg,
-    var(--cr-pink, #FFB79F),
-    var(--cr-purple, #E2D3FF),
-    var(--cr-orange, #FFD063),
-    var(--cr-yellow, #FFF384)
+    #FFB79F,
+    #E2D3FF,
+    #FFD063,
+    #FFF384
   );
   background-size: 300% 300%;
   -webkit-background-clip: text;
@@ -45,20 +45,20 @@
    ================================== */
 .shop-grid {
   display: grid;
-  grid-template-columns: repeat(3, 280px); /* 3 productos por fila */
+  grid-template-columns: repeat(3, 280px);
   gap: 2rem;
-  justify-content: center; /* Centra el grid horizontalmente */
+  justify-content: center;
 }
 
 @media (max-width: 1024px) {
   .shop-grid {
-    grid-template-columns: repeat(2, 280px); /* 2 columnas tablet */
+    grid-template-columns: repeat(2, 280px);
   }
 }
 
 @media (max-width: 700px) {
   .shop-grid {
-    grid-template-columns: repeat(1, 280px); /* 1 columna móvil */
+    grid-template-columns: repeat(1, 280px);
   }
 }
 
@@ -66,25 +66,30 @@
    🎴 Tarjetas del SHOP
    ================================== */
 .product-card {
-  flex: 0 0 280px;          
+  flex: 0 0 280px;
   min-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid black; 
+  border: 1px solid black;
   border-radius: 8px;
-  background-color: var(--cr-offwhite-1, #FFF9ED);
+  background-color: #FFF9ED; /* fondo neutral */
   text-align: center;
   overflow: hidden;
   font-family: monospace, Arial, sans-serif;
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
 }
 
 /* Header */
 .card-header {
-  background-color: var(--cr-green, #78c351);
   padding: 0.8rem;
   border-bottom: 1px solid black;
 }
+
 .product-name {
   font-size: 1rem;
   margin: 0;
@@ -94,10 +99,10 @@
 
 /* Subheader */
 .card-subheader {
-  background-color: var(--cr-green-light, #E6EBAF);
   padding: 0.6rem;
   border-bottom: 1px solid black;
 }
+
 .product-desc {
   font-size: 0.9rem;
   margin: 0;
@@ -113,28 +118,64 @@
   justify-content: center;
   padding: 1rem;
 }
+
 .product-img {
   max-height: 260px;
   width: auto;
   object-fit: contain;
-  border-radius: 8px; 
+  border-radius: 8px;
 }
 
 /* Footer */
 .card-footer {
-  background-color: var(--cr-green-light, #E6EBAF);
   border-top: 1px solid black;
   padding: 0.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .stock-info {
   font-size: 0.85rem;
   color: #333;
 }
+
 .product-price {
   font-size: 1.2rem;
   font-weight: bold;
   color: black;
 }
+
+/* ==================================
+   🎨 Variantes de Color por Tema (HEX directos)
+   ================================== */
+
+/* 🌿 Verde */
+.card-header.green { background-color: #61B261; } /* dark */
+.card-subheader.green,
+.card-footer.green { background-color: #DAFBDA; } /* light */
+
+/* 💜 Púrpura */
+.card-header.purple { background-color: #C0A4FA; } /* dark */
+.card-subheader.purple,
+.card-footer.purple { background-color: #E5E5F1; } /* light */
+
+/* 🍊 Naranja */
+.card-header.orange { background-color: #F5B54A; } /* dark */
+.card-subheader.orange,
+.card-footer.orange { background-color: #FDE4AA; } /* light */
+
+/* 🌸 Rosa */
+.card-header.pink { background-color: #FA8F6B; } /* dark */
+.card-subheader.pink,
+.card-footer.pink { background-color: #FFDACE; } /* light */
+
+/* 🌾 Amarillo */
+.card-header.yellow { background-color: #FBE526; } /* dark */
+.card-subheader.yellow,
+.card-footer.yellow { background-color: #FFF8BD; } /* light */
+
+/* 🤎 Marrón */
+.card-header.brown { background-color: #C67C3C; } /* dark */
+.card-subheader.brown,
+.card-footer.brown { background-color: #F5DAB3; } /* light */
