@@ -1,41 +1,6 @@
 /* ==============================
    🌌 Sección principal del SHOP
    ============================== */
-:root {
-  --cr-black: #000000;
-  --cr-white: #ffffff;
-  --cr-offwhite: #FFFEF6;
-  --cr-offwhite-1: #FFF9ED;
-  --cr-offwhite-2: #F2E9D7;
-  --cr-orange-light: #FDE4AA;
-  --cr-orange: #FFD063;
-  --cr-orange-dark: #F5B54A;
-  --cr-chartreuse-light: #E6EBAF;
-  --cr-chartreuse: #D2E26B;
-  --cr-chartreuse-dark: #B1D745;
-  --cr-purple-light: #E5E5F1;
-  --cr-purple: #E2D3FF;
-  --cr-purple-dark: #C0A4FA;
-  --cr-pink-light: #FFDACE;
-  --cr-pink: #FFB79F;
-  --cr-pink-dark: #FA8F6B;
-  --cr-brown-light: #F5DAB3;
-  --cr-brown: #D8945A;
-  --cr-brown-dark: #C67C3C;
-  --cr-yellow-light: #FFF8BD;
-  --cr-yellow: #FFF384;
-  --cr-yellow-dark: #FBE526;
-  --cr-red-light: #FFE2E2;
-  --cr-red: #FF8179;
-  --cr-red-dark: #F43B2F;
-  --cr-green-light: #DAFBDA;
-  --cr-green: #A1DFA1;
-  --cr-green-dark: #61B261;
-  --cr-green-extra-dark: #234E32;
-  --cr-blue: #3954e3;
-  --cr-blue-light: #A4D3E5;
-}
-
 .shop-section {
   padding: 4rem 2rem;
   text-align: center;
@@ -45,7 +10,6 @@
   background-color: var(--cr-offwhite-1, #FFF9ED);
   color: black;
   overflow: hidden;
-  margin-top: ;
 }
 
 .shop-title {
@@ -54,7 +18,6 @@
   font-family: 'NothingMagic', Arial, sans-serif;
   margin-bottom: 3rem;
   text-transform: uppercase;
-  margin-top: 5%;
 }
 
 .gradient-text {
@@ -82,29 +45,29 @@
    ================================== */
 .shop-grid {
   display: grid;
-  grid-template-columns: repeat(3, 330px); /* 3 productos por fila */
+  grid-template-columns: repeat(3, 280px); /* 3 productos por fila */
   gap: 2rem;
-  justify-content: center;
+  justify-content: center; /* Centra el grid horizontalmente */
 }
 
 @media (max-width: 1024px) {
   .shop-grid {
-    grid-template-columns: repeat(2, 280px);
+    grid-template-columns: repeat(2, 280px); /* 2 columnas tablet */
   }
 }
 
 @media (max-width: 700px) {
   .shop-grid {
-    grid-template-columns: repeat(1, 280px);
+    grid-template-columns: repeat(1, 280px); /* 1 columna móvil */
   }
 }
 
 /* ==================================
-   🎴 Estilos Base de Tarjetas
+   🎴 Tarjetas del SHOP
    ================================== */
 .product-card {
   flex: 0 0 280px;          
-  min-height: 550px;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -118,6 +81,7 @@
 
 /* Header */
 .card-header {
+  background-color: var(--cr-green, #78c351);
   padding: 0.8rem;
   border-bottom: 1px solid black;
 }
@@ -125,16 +89,19 @@
   font-size: 1rem;
   margin: 0;
   text-transform: uppercase;
+  color: black;
 }
 
 /* Subheader */
 .card-subheader {
+  background-color: var(--cr-green-light, #E6EBAF);
   padding: 0.6rem;
   border-bottom: 1px solid black;
 }
 .product-desc {
   font-size: 0.9rem;
   margin: 0;
+  color: black;
   font-style: italic;
 }
 
@@ -155,6 +122,7 @@
 
 /* Footer */
 .card-footer {
+  background-color: var(--cr-green-light, #E6EBAF);
   border-top: 1px solid black;
   padding: 0.8rem;
   display: flex;
@@ -163,47 +131,10 @@
 }
 .stock-info {
   font-size: 0.85rem;
+  color: #333;
 }
 .product-price {
   font-size: 1.2rem;
   font-weight: bold;
+  color: black;
 }
-
-/* ==================================
-   🎨 Temas de Colores para Cards
-   ================================== */
-
-/* 🌱 Verde */
-.card-theme-green .card-header { background-color: var(--cr-green-dark); color: var(--cr-black); }
-.card-theme-green .card-subheader,
-.card-theme-green .card-footer { background-color: var(--cr-green-light); }
-.card-theme-green .stock-info { color: #333; }
-.card-theme-green .product-price { color: var(--cr-green-extra-dark); }
-
-/* 🍊 Naranja */
-.card-theme-orange .card-header { background-color: var(--cr-orange-dark); color: var(--cr-black); }
-.card-theme-orange .card-subheader,
-.card-theme-orange .card-footer { background-color: var(--cr-orange-light); }
-.card-theme-orange .stock-info { color: #444; }
-.card-theme-orange .product-price { color: var(--cr-orange-dark); }
-
-/* 💜 Morado */
-.card-theme-purple .card-header { background-color: var(--cr-purple-dark); }
-.card-theme-purple .card-subheader,
-.card-theme-purple .card-footer { background-color: var(--cr-purple-light); }
-.card-theme-purple .stock-info { color: #444; }
-.card-theme-purple .product-price { color: var(--cr-purple-dark); }
-
-/* 🌸 Rosa */
-.card-theme-pink .card-header { background-color: var(--cr-pink-dark); }
-.card-theme-pink .card-subheader,
-.card-theme-pink .card-footer { background-color: var(--cr-pink-light); }
-.card-theme-pink .stock-info { color: #555; }
-.card-theme-pink .product-price { color: var(--cr-pink-dark); }
-
-/* 🌞 Amarillo */
-.card-theme-yellow .card-header { background-color: var(--cr-yellow-dark); }
-.card-theme-yellow .card-subheader,
-.card-theme-yellow .card-footer { background-color: var(--cr-yellow-light); }
-.card-theme-yellow .stock-info { color: #666; }
-.card-theme-yellow .product-price { color: var(--cr-yellow-dark); }

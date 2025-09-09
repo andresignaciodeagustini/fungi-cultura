@@ -1,13 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/productSlider.css";
+import "../styles/productSlider.css"; // 👈 Reutilizamos el mismo CSS
 
-// Importa tus imágenes
 import producto1 from "../assets/img/producto1.jpg";
 import producto2 from "../assets/img/producto2.jpg";
 import producto3 from "../assets/img/producto3.jpg";
 
-// Datos de productos
 const products = [
   { id: 1, name: "Colgante Fungi", desc: "Accesorio único con inspiración fungi.", price: "$30", img: producto1 },
   { id: 2, name: "Velador Místico", desc: "Una luz suave con diseño micelial.", price: "$45", img: producto2 },
@@ -23,15 +21,6 @@ const products = [
   { id: 12, name: "Camiseta Alternativa", desc: "Inspirada en la naturaleza.", price: "$29", img: producto3 },
 ];
 
-// Temas de colores que se aplican cíclicamente
-const themes = [
-  "card-theme-green",
-  "card-theme-orange",
-  "card-theme-purple",
-  "card-theme-pink",
-  "card-theme-yellow",
-];
-
 export default function Shop() {
   const navigate = useNavigate();
 
@@ -40,42 +29,39 @@ export default function Shop() {
   };
 
   return (
-    <section className="shop-section">
-      <h2 className="shop-title gradient-text">SHOP ALL</h2>
+    <section className="slider-section">
+      <h2 className="slider-title gradient-text">SHOP ALL</h2>
 
       <div className="shop-grid">
-        {products.map((p, index) => {
-          const theme = themes[index % themes.length]; // ciclo de temas
-          return (
-            <div
-              key={p.id}
-              className={`product-card ${theme}`}
-              onClick={() => goToDetail(p.id)}
-              style={{ cursor: "pointer" }}
-            >
-              {/* Header */}
-              <div className="card-header">
-                <h3 className="product-name">{p.name}</h3>
-              </div>
-
-              {/* Subheader */}
-              <div className="card-subheader">
-                <p className="product-desc">{p.desc}</p>
-              </div>
-
-              {/* Imagen */}
-              <div className="card-image">
-                <img src={p.img} alt={p.name} className="product-img" />
-              </div>
-
-              {/* Footer */}
-              <div className="card-footer">
-                <span className="stock-info">DISPONIBLE</span>
-                <span className="product-price">{p.price}</span>
-              </div>
+        {products.map((p) => (
+          <div
+            key={p.id}
+            className="product-card"
+            onClick={() => goToDetail(p.id)}
+            style={{ cursor: "pointer" }}
+          >
+            {/* Header */}
+            <div className="card-header">
+              <h3 className="product-name">{p.name}</h3>
             </div>
-          );
-        })}
+
+            {/* Subheader */}
+            <div className="card-subheader">
+              <p className="product-desc">{p.desc}</p>
+            </div>
+
+            {/* Imagen */}
+            <div className="card-image">
+              <img src={p.img} alt={p.name} className="product-img" />
+            </div>
+
+            {/* Footer */}
+            <div className="card-footer">
+              <span className="stock-info">DISPONIBLE</span>
+              <span className="product-price">{p.price}</span>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
