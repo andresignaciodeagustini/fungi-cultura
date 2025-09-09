@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/productSlider.css"; // 👈 Reutilizamos el mismo CSS
+import "../styles/shop.css"; // 👈 Importamos el CSS del shop
 
 import producto1 from "../assets/img/producto1.jpg";
 import producto2 from "../assets/img/producto2.jpg";
@@ -29,8 +29,8 @@ export default function Shop() {
   };
 
   return (
-    <section className="slider-section">
-      <h2 className="slider-title gradient-text">SHOP ALL</h2>
+    <section className="shop-section">
+      <h2 className="shop-title gradient-text">SHOP ALL</h2>
 
       <div className="shop-grid">
         {products.map((p) => (
