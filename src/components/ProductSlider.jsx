@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom"; // 👈 Importamos para navegación
 import "../styles/productSlider.css";
 
 // 👉 Importamos flechas
@@ -12,18 +13,21 @@ import producto3 from "../assets/img/producto3.jpg";
 
 const products = [
   {
+    id: 1,
     name: "Colgante Fungi",
     desc: "Accesorio único con inspiración fungi.",
     price: "$30",
     img: producto1,
   },
   {
+    id: 2,
     name: "Velador Místico",
     desc: "Una luz suave con diseño micelial.",
     price: "$45",
     img: producto2,
   },
   {
+    id: 3,
     name: "Camiseta Fungi",
     desc: "Diseño creativo y cómodo para almas miceliales.",
     price: "$25",
@@ -33,9 +37,17 @@ const products = [
 
 export default function ProductSlider() {
   const sliderRef = useRef(null);
+  const navigate = useNavigate(); // 👈 Hook para redirigir
 
-  const scrollLeft = () => sliderRef.current.scrollBy({ left: -300, behavior: "smooth" });
-  const scrollRight = () => sliderRef.current.scrollBy({ left: 300, behavior: "smooth" });
+  const scrollLeft = () =>
+    sliderRef.current.scrollBy({ left: -300, behavior: "smooth" });
+  const scrollRight = () =>
+    sliderRef.current.scrollBy({ left: 300, behavior: "smooth" });
+
+  // 👇 Función para redirigir
+  const goToDetail = (id) => {
+    navigate(`/product/${id}`);
+  };
 
   return (
     <section className="slider-section">
@@ -52,8 +64,13 @@ export default function ProductSlider() {
       </button>
 
       <div className="slider-container" ref={sliderRef}>
-        {products.map((p, index) => (
-          <div key={index} className="product-card">
+        {products.map((p) => (
+          <div
+            key={p.id}
+            className="product-card"
+            onClick={() => goToDetail(p.id)} // 👈 clic redirige al detalle
+            style={{ cursor: "pointer" }}   // 👈 cambio visual al pasar el mouse
+          >
             {/* Header */}
             <div className="card-header">
               <h3 className="product-name">{p.name}</h3>

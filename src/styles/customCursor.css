@@ -1,0 +1,23 @@
+body {
+  cursor: none; /* Oculta el cursor nativo */
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #b67ff7;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out, background 0.3s;
+  z-index: 10000;
+  box-shadow: 0 0 8px #c299ff, 0 0 16px #9a5df5, 0 0 24px rgba(255,255,255,0.6);
+}
+
+.custom-cursor.active {
+  transform: translate(-50%, -50%) scale(1.5);
+  background: rgba(182, 127, 247, 0.2);
+}

@@ -7,11 +7,15 @@ import Cart from "./pages/Cart";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SectionInfo from "./components/SectionInfo";   
-import ProductSlider from "./components/ProductSlider";  // ✅ Nuevo import
+import ProductSlider from "./components/ProductSlider";
+import ProductDetail from "./pages/ProductDetail"; 
+import CustomCursor from "./components/CustomCursor"; // 👈 import cursor
 
 function App() {
   return (
     <BrowserRouter>
+      <CustomCursor /> {/* 👈 cursor activo en TODAS las páginas */}
+
       <Navbar />
       <Routes>
         <Route 
@@ -19,14 +23,16 @@ function App() {
           element={
             <>
               <Home />
-              
-              <SectionInfo />   {/* ✅ Y arriba del bloque informativo */}
-              <ProductSlider /> {/* ✅ Ahora aparece debajo del Home */}
+              <SectionInfo />
+              <ProductSlider />
             </>
           }
         />
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />
+
+        {/* Ruta dinámica de detalle */}
+        <Route path="/product/:productId" element={<ProductDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>
