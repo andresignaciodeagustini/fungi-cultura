@@ -12,11 +12,6 @@
   z-index: 1;
 }
 
-
-
-/* Intro pequeño */
-
-
 /* Titulares destacados */
 .highlight {
   font-size: 6.5rem;
@@ -25,11 +20,9 @@
   letter-spacing: 2px;
   display: inline-block;
   line-height: 1.2;
-
-  /* 🔹 Mantiene relleno de color pero agrega borde */
-  -webkit-text-stroke: 2px #000; /* Borde negro */
-  color: inherit;                /* El relleno sigue usando el color de clase (.purple, .pink, etc.) */
-  paint-order: stroke fill;      /* Asegura que el contorno se pinte detrás */
+  -webkit-text-stroke: 2px #000;
+  color: inherit;
+  paint-order: stroke fill;
 }
 
 .purple { color: #9a5df5; } 
@@ -45,10 +38,38 @@
   margin: 2.2rem 0;
 }
 
-/* Texto inferior */
+/* 🔹 Íconos entre palabras */
+.inline-icon {
+  width: 60px;
+  height: auto;
+  vertical-align: middle;
+  margin: 0 10px;
+  display: inline-block;
+  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+}
 
+/* 🔹 Lógica de posición (izquierda o derecha) */
+.inline-icon.left {
+  margin-right: 15px;
+}
+.inline-icon.right {
+  margin-left: 15px;
+}
 
-/* Animaciones */
+/* 🔹 Animación de íconos flotantes */
+@keyframes floatIcon {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(4deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.floating-icon {
+  animation-name: floatIcon;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* 🔹 Animaciones de texto */
 @keyframes floatingAnim {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-8px); }
@@ -70,12 +91,10 @@
   100% { text-shadow: 0 0 6px #f4c542, 0 0 12px #e98b3a; }
 }
 
-/* Aplicaciones */
 .floating { animation: floatingAnim 6s ease-in-out infinite; }
 .bouncing { animation: bounce 2.5s infinite ease-in-out; }
 .glow { animation: glowPulse 3s infinite ease-in-out; }
 
-/* Diferentes delays */
 .fade-in { animation: fadeInUp 1.8s ease forwards; }
 .fade-in-delay { animation: fadeInUp 2.2s ease forwards; }
 .fade-in-slow { animation: fadeInUp 2.8s ease forwards; }
@@ -88,4 +107,3 @@
   margin: 1rem 0;
   text-align: center;
 }
-
