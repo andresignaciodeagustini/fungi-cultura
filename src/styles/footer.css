@@ -1,21 +1,22 @@
+/* 👇 IMPORTS SIEMPRE ARRIBA DEL ARCHIVO */
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap'); 
-/* Si 'NothingMagic' ya está instalada en tu proyecto, reemplaza esta segunda importación por esa fuente */
+/* Si 'NothingMagic' está instalada en tu proyecto, reemplaza esta última importación */
 
 .footer {
   font-family: 'NothingMagic', cursive;
-  background-color: #FFF9ED; /* offwhite-1 */
-  color: #234E32; /* green-extra-dark */
+  background-color: #E2D3FF; /* lavanda suave para el fondo */
+  color: #234E32; /* verde profundo para contraste */
 }
 
-/* Barra superior */
+/* Barra superior: gradiente pastel */
 .footer-social {
   background: linear-gradient(
     to right,
-    #FDE4AA, /* orange-light */
-    #E6EBAF, /* chartreuse-light */
-    #E5E5F1, /* purple-light */
-    #FFDACE  /* pink-light */
+    #E5E5F1, /* lavanda grisáceo */
+    #C0A4FA, /* lila mediano */
+    #E2D3FF, /* lavanda claro */
+    #FFDACE  /* rosa pastel suave */
   );
   padding: 1rem;
   text-align: center;
@@ -26,11 +27,9 @@
   margin: 0 1rem;
   font-size: 1.5rem;
   font-weight: bold;
-  color: hsl(120, 6%, 93%); /* casi blanco */
+  color: #FFFEF6; /* blanco roto */
   text-decoration: none;
   transition: 0.3s;
-
-  /* Contorno negro con sombras */
   text-shadow: 
     -1px -1px 0 #000,  
      1px -1px 0 #000,
@@ -38,7 +37,7 @@
      1px  1px 0 #000;
 }
 .footer-social a:hover {
-  color: #F43B2F; /* red-dark */
+  color: #B1D745; /* verde suave */
 }
 
 /* Bloque principal */
@@ -56,13 +55,13 @@
   gap: 0.5rem;
 }
 .footer-col a {
-  font-family: "Space Mono", monospace; /* ✅ Links navegación */
+  font-family: "Space Mono", monospace;
   text-decoration: none;
-  color: #234E32; /* green-extra-dark */
+  color: #234E32; /* verde profundo */
   transition: 0.2s;
 }
 .footer-col a:hover {
-  color: #F5B54A; /* orange-dark */
+  color: #C0A4FA; /* lila mediano */
 }
 
 .footer-center {
@@ -72,10 +71,11 @@
 .footer-title {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: #61B261; /* green-dark */
+  color: #FFFEF6;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* verde natural para equilibrio */
 }
 .footer-center p {
-  font-family: "Space Mono", monospace; /* ✅ Texto descriptivo */
+  font-family: "Space Mono", monospace;
   font-size: 0.95rem;
   margin: 0.5rem 0;
   color: #234E32;
@@ -87,12 +87,12 @@
 .footer-subscribe input {
   flex: 1;
   padding: 0.5rem;
-  border: 2px solid #A1DFA1; /* green */
+  border: 2px solid #C0A4FA; /* borde lavanda mediano */
   border-radius: 8px 0 0 8px;
-  font-family: "Space Mono", monospace; /* ✅ Input email */
+  font-family: "Space Mono", monospace;
 }
 .footer-subscribe button {
-  background: #FFD063; /* orange */
+  background: #FFDACE; /* rosa pastel suave */
   border: none;
   padding: 0 1.5rem;
   border-radius: 0 8px 8px 0;
@@ -100,31 +100,31 @@
   transition: 0.3s;
 }
 .footer-subscribe button:hover {
-  background: #F5B54A; /* orange-dark */
+  background: #E5E5F1; /* lavanda grisáceo */
 }
 
 /* Inferior */
 .footer-bottom {
-  border-top: 1px solid #F2E9D7; /* offwhite-2 */
+  border-top: 1px solid #C0A4FA; /* divisor lila mediano */
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
-  font-family: "Space Mono", monospace; /* ✅ © 2025 Fungi Cultura */
+  font-family: "Space Mono", monospace;
 }
 .footer-links {
   margin: 0.5rem 0;
 }
 .footer-links a {
-  font-family: "Space Mono", monospace; /* ✅ Links legales */
+  font-family: "Space Mono", monospace;
   margin: 0 0.5rem;
   text-decoration: none;
-  color: #234E32; /* green-extra-dark */
+  color: #234E32;
 }
 .footer-links a:hover {
-  color: #FA8F6B; /* pink-dark */
+  color: #B1D745; /* verde claro */
 }
 .credit {
-  font-family: "Space Mono", monospace; /* ✅ Créditos "Hecho con 🍄 y creatividad" */
-  color: #C67C3C; /* brown-dark */
+  font-family: "Space Mono", monospace;
+  color: #C67C3C; /* marrón cálido para contraste */
   font-style: italic;
 }
