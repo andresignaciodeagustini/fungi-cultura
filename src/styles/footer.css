@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap'); 
+/* Si 'NothingMagic' ya está instalada en tu proyecto, reemplaza esta segunda importación por esa fuente */
+
+.footer {
+  font-family: 'NothingMagic', cursive;
+  background-color: #FFF9ED; /* offwhite-1 */
+  color: #234E32; /* green-extra-dark */
+}
+
+/* Barra superior */
+.footer-social {
+  background: linear-gradient(
+    to right,
+    #FDE4AA, /* orange-light */
+    #E6EBAF, /* chartreuse-light */
+    #E5E5F1, /* purple-light */
+    #FFDACE  /* pink-light */
+  );
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+}
+.footer-social a {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: hsl(120, 6%, 93%); /* casi blanco */
+  text-decoration: none;
+  transition: 0.3s;
+
+  /* Contorno negro con sombras */
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+.footer-social a:hover {
+  color: #F43B2F; /* red-dark */
+}
+
+/* Bloque principal */
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer-col a {
+  font-family: "Space Mono", monospace; /* ✅ Links navegación */
+  text-decoration: none;
+  color: #234E32; /* green-extra-dark */
+  transition: 0.2s;
+}
+.footer-col a:hover {
+  color: #F5B54A; /* orange-dark */
+}
+
+.footer-center {
+  text-align: center;
+  max-width: 400px;
+}
+.footer-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #61B261; /* green-dark */
+}
+.footer-center p {
+  font-family: "Space Mono", monospace; /* ✅ Texto descriptivo */
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+  color: #234E32;
+}
+.footer-subscribe {
+  display: flex;
+  margin-top: 1rem;
+}
+.footer-subscribe input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 2px solid #A1DFA1; /* green */
+  border-radius: 8px 0 0 8px;
+  font-family: "Space Mono", monospace; /* ✅ Input email */
+}
+.footer-subscribe button {
+  background: #FFD063; /* orange */
+  border: none;
+  padding: 0 1.5rem;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.footer-subscribe button:hover {
+  background: #F5B54A; /* orange-dark */
+}
+
+/* Inferior */
+.footer-bottom {
+  border-top: 1px solid #F2E9D7; /* offwhite-2 */
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-family: "Space Mono", monospace; /* ✅ © 2025 Fungi Cultura */
+}
+.footer-links {
+  margin: 0.5rem 0;
+}
+.footer-links a {
+  font-family: "Space Mono", monospace; /* ✅ Links legales */
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: #234E32; /* green-extra-dark */
+}
+.footer-links a:hover {
+  color: #FA8F6B; /* pink-dark */
+}
+.credit {
+  font-family: "Space Mono", monospace; /* ✅ Créditos "Hecho con 🍄 y creatividad" */
+  color: #C67C3C; /* brown-dark */
+  font-style: italic;
+}
